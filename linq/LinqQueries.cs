@@ -18,4 +18,13 @@ public class LinqQueries{
     public IEnumerable<Book> More250PagTitleInAction(){
         return librosCollection.Where(x => x.pageCount > 250 && x.title.Contains("in Action"));
     } 
+    public bool StatusNotNull(){
+        return librosCollection.All(x => x.status != string.Empty);
+    }
+    public bool anyPublished2005(){
+        return librosCollection.Any(x => x.publishedDate.Year == 2005);
+    }
+    public IEnumerable<Book> inCategoryPython(){
+        return librosCollection.Where(x => x.categories.Contains("Python"));
+    }
 }

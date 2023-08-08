@@ -10,5 +10,4 @@
 	<ItemGroup>
 		<Content Include = "books.json" />
 	</ItemGroup>
-
 </Project>
