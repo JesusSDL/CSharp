@@ -20,15 +20,15 @@ public class LinqQueries
     {
         return librosCollection.Where(x => x.publishedDate.Year > 2000);
     }
-    public IEnumerable<Book> More250PagTitleInAction()
+    public IEnumerable<Book> more250PagTitleInAction()
     {
         return librosCollection.Where(x => x.pageCount > 250 && x.title.Contains("in Action"));
     }
-    public bool StatusNotNull()
+    public bool statusNotNull()
     {
         return librosCollection.All(x => x.status != string.Empty);
     }
-    public bool anyPublished2005()
+    public bool anyPublication2005()
     {
         return librosCollection.Any(x => x.publishedDate.Year == 2005);
     }
@@ -44,7 +44,7 @@ public class LinqQueries
     {
         return librosCollection.Where(x => x.pageCount > 450).OrderByDescending(x => x.pageCount);
     }
-    public IEnumerable<Book> publishedDateRecent()
+    public IEnumerable<Book> publicationDateRecent()
     {
         return librosCollection.Where(x => x.categories.Contains("Java"))
         .OrderByDescending(x => x.publishedDate)
@@ -64,7 +64,7 @@ public class LinqQueries
     {
         return librosCollection.Count(x => x.pageCount >= 200 && x.pageCount <= 500);
     }
-    public DateTime FirstPublishedDate()
+    public DateTime firstPublicationDate()
     {
         return librosCollection.Min(x => x.publishedDate);
     }
@@ -80,7 +80,7 @@ public class LinqQueries
     {
         return librosCollection.MaxBy(x => x.publishedDate);
     }
-    public int sumBooksBetw0y500()
+    public int sumBooksBetw0and500()
     {
         return librosCollection.Where(x => x.pageCount >= 0 && x.pageCount <= 500).Sum(x => x.pageCount);
     }
