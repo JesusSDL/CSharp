@@ -1,0 +1,5 @@
+C:\Users\JESIS PCMásterRace\VC-workspace\linq\obj\Debug\net6.0\linq.csproj.AssemblyReference.cache
+C:\Users\JESIS PCMásterRace\VC-workspace\linq\obj\Debug\net6.0\linq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JESIS PCMásterRace\VC-workspace\linq\obj\Debug\net6.0\linq.AssemblyInfoInputs.cache
+C:\Users\JESIS PCMásterRace\VC-workspace\linq\obj\Debug\net6.0\linq.AssemblyInfo.cs
+C:\Users\JESIS PCMásterRace\VC-workspace\linq\obj\Debug\net6.0\linq.csproj.CoreCompileInputs.cache
