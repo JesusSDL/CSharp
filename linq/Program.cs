@@ -8,9 +8,35 @@ void imprimirValores(IEnumerable<Book> listadeLibros)
         Console.WriteLine("{0, -60}| {1,12}| {2,11}", i.title, i.pageCount, i.publishedDate);
     }
 }
+void ImprimirGrupo(IEnumerable<IGrouping<int,Book>> ListadeLibros)
+{
+    foreach(var grupo in ListadeLibros)
+    {
+        Console.WriteLine("");
+        Console.WriteLine($"Grupo: { grupo.Key }");
+        Console.WriteLine("{0,-60} {1, 15} {2, 15}\n", "Titulo", "Nro Paginas", "Fecha publicacion");
+        foreach(var item in grupo)
+        {
+            Console.WriteLine("{0,-60} {1, 15} {2, 15}",item.title,item.pageCount,item.publishedDate); 
+        }
+    }
+}
+void ImprimirDiccionario(ILookup<char, Book> ListadeLibros, char letra)
+{
+   Console.WriteLine("{0,-60} {1, 15} {2, 15}\n", "Titulo", "N. Paginas", "Fecha publicacion");
+   foreach(var item in ListadeLibros[letra])
+   {
+         Console.WriteLine("{0,-60} {1, 15} {2, 15}",item.title,item.pageCount,item.publishedDate); 
+   }
+}
 
-Console.Write($"El promedio de cantidad de caracteres, es: {lq.averageCharactersTitle()}");
 
+//imprimirValores(lq.joinMore500PagesAndPublicationAfter2005());
+/*var diccionario = lq.diccionaryBookByWord(); 
+ImprimirDiccionario(diccionario, 'B');*/
+
+//ImprimirGrupo(lq.publicationAfter2000GrByYear());
+//Console.Write($"El promedio de cantidad de caracteres, es: {lq.averageCharactersTitle()}");
 //Console.Write($"Libros después del 2015: \n {lq.booksAfter2015()}");
 //Console.Write($"La suma de páginas de libros de 0 a 50 páginas es: {lq.sumBooksBetw0y500()}");
 

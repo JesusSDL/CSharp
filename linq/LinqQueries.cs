@@ -104,5 +104,17 @@ public class LinqQueries
     {
         return librosCollection.Average(x => x.title.Length);
     }
+    public IEnumerable<IGrouping<int, Book>> publicationAfter2000GrByYear(){
+        return librosCollection.Where(x => x.publishedDate.Year > 2000).GroupBy(x => x.publishedDate.Year);
+    }
+    public ILookup<char, Book> diccionaryBookByWord()
+    {
+        return librosCollection.ToLookup(p=> p.title[0], p=> p);
+    }
+    public IEnumerable<Book> joinMore500PagesAndPublicationAfter2005(){
+        var publicationAfter2005 = librosCollection.Where(x=> x.publishedDate.Year > 2005);
+        var more500Pages = librosCollection.Where(x=> x.pageCount > 500);
+        return publicationAfter2005.Join(more500Pages, x=> x.title, y=> y.title, (x, y)=> x);
+    }
 }
 
