@@ -32,7 +32,8 @@ namespace projectEf
             task.Property(x=> x.title).IsRequired().HasMaxLength(200);
             task.Property(x=>x.description);
             task.Property(x=>x.prioridadTask);
-            task.Property(x=> x.creationDate); 
+            task.Property(x=> x.creationDate);
+            task.Ignore(x=> x.summary);       
             
 
         });

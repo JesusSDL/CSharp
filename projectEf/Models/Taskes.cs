@@ -21,7 +21,7 @@ namespace projectEf.Models
         public DateTime creationDate { get; set; }
         public virtual Categories category { get; set; }
         
-        [NotMapped]
+        //[NotMapped]
         public string summary {get; set;}
     }
     public enum Prioridad{
